@@ -1,0 +1,22 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container">
+    <h1 class="my-4">
+        <span class="d-inline-block" style="position: relative; top: 5px; margin-right: 10px; background-color: yellow; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 30px;">
+            <i class="fas fa-tooth fa-sm" style="position: relative; top: 3px; margin-left: 2px"></i>
+        </span>
+        Nuestros Profesionales
+    </h1>
+    <ul>
+        {% for dentista in dentistas %}
+            <li>{{ dentista.nombre }}//Especialista en: {{ dentista.especialidad }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock contenido %}

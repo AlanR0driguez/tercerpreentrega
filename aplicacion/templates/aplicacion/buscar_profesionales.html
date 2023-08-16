@@ -1,0 +1,24 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block contenido %}
+<<div class="container">
+    <h1 class="my-4">
+        <span class="d-inline-block" style="position: relative; top: 1px; margin-right: 10px; background-color: yellow; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 30px;">
+            <i class="fas fa-tooth fa-sm" style="position: relative; top: 3px; margin-left: 2px"></i>
+        </span>
+    Busqueda de Profesionales por Especialidad
+    </h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Buscar</button>
+    </form>
+    {% if dentistas %}
+    <h2 class="mt-4">Resultados de la búsqueda:</h2>
+    <ul>
+        {% for dentista in dentistas %}
+            <li>{{ dentista.nombre }} (Especialidad: {{ dentista.especialidad }})</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+ {% endblock contenido %}

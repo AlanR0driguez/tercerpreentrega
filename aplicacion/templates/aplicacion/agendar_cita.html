@@ -1,0 +1,21 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <div style="color: black;">Gracias por darnos tu confianza!!</div>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container">
+    <h1 class="my-4">Agendar Cita
+        <span style="display: inline-block; width: 50px; height: 50px; background-color: yellow; border-radius: 50%; text-align: center; line-height: 30px; margin-left: 10px;">
+            <i class="fas fa-list fa-sm" style="margin-top: 5px;"></i>
+        </span>
+    </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Agendar Cita</button>
+    </form>
+</div>
+{% endblock contenido %}

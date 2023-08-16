@@ -1,0 +1,17 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h4 style="color: black;">Citas registradas</h4>
+{% endblock titulo %}
+
+{% block contenido %}
+    <div class="container">
+        <h1 class="my-4">Lista de Citas</h1>
+        <ul>
+            {% for cita in citas %}
+                <li>{{ cita.dia }}/{{ cita.mes }}/{{ cita.anio }} - {{ cita.paciente.nombre }} {{ cita.paciente.apellido }}-{{ cita.descripcion }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock contenido %}
